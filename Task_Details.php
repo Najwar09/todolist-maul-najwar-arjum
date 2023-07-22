@@ -1,3 +1,7 @@
+<?php
+    echo "afdsffdsfads";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -189,16 +193,38 @@
     min-height: 35px;
 }
     </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />
 </head>
+
+
 <body>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+
 <div class="container">
 <div class="col-md-12 col-12 col-sm-12">
 <div class="card">
 <div class="card-header">
-<h4>Task Details</h4>
-<button clas
-></button>
+
+
+    <div class="container px-4 text-center">
+  <div class="row gx-5">
+    <div class="col">
+     <div class="p-3"><h4>Task Details</h4></div>
+    </div>
+    <div class="col">
+      <div class="p-3"><button class="btn btn-success w-25">+</button></div>
+    </div>
+  </div>
+</div>
+
+
+
 </div>
 <div class="card-body">
 <div class="table-responsive">
@@ -225,7 +251,7 @@
 
 <td>2018-01-20</td>
 <td>
-<a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
+<a class="btn btn-primary btn-action mr-1" data-toggle="modal" data-target="#modelId"><i class="fas fa-pencil-alt"></i></a>
 <a class="btn btn-danger btn-action" data-toggle="tooltip" title data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')" data-original-title="Delete"><i class="fas fa-trash"></i></a>
 </td>
 </tr>
@@ -285,5 +311,38 @@
 <script type="text/javascript">
 	
 </script>
+
+
+
+
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Daftar Pengguna</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="koneksi/proses.php?id=daftar">
+                    <div class="form-group">
+                    <label for="">Task Name</label>
+                    <input type="text" name="tugas" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                    <label for="">Due Date</label>
+                    <input type="date" name="tanggal" id="" class="form-control"  required placeholder="" aria-describedby="helpId">
+                    </div>
+                    
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-secondary text-white" data-dismiss="modal">Close</a>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
